@@ -1,0 +1,62 @@
+// Date, ip, rooturl, sitename
+// Uid, name, login
+
+[_header]
+#date# (IP: #ip#)
+
+[_footer]
+Sincerely, The <a href="#rooturl#"> #sitename# </ a>
+
+[AdminIn.topic]
+Login to control panel
+[AdminIn.message]
+Administrator #login# [#uid#] logged in
+
+[NewUser.topic]
+New user
+[NewUser.message]
+Registered new user #login# (#name#) [#uid#]
+
+[AddFundsError.topic]
+Error when replenishing
+[AddFundsError.message]
+Invalid query : #request#
+Check result : #result#
+Options SCI: #params#
+
+[AddFundsError2.topic]
+Error in the recharge
+[AddFundsError2.message]
+Application ##oid# not done : Error [#error#]
+
+[OperCASHIN.topic]
+Recharge
+[OperCASHIN.message]
+User #login# [#uid#] extended his balance on #sum# #curr# #psys# (batch: #batch#)
+
+[OperCASHOUT.topic]
+Withdraw
+[OperCASHOUT.message]
+User #login# [#uid#] translated #sum# #curr# #psys# (batch: #batch#)
+
+[OperRequired.topic]
+Operation requires processing
+[OperRequired.message]
+User #login# [#uid#] created operation ##oid#, requiring manual processing
+To view the details of the operation go on <a href="#url#?id=#oid#"> link </ a>
+
+[OperNotComplete.topic]
+Operation is not performed
+[OperNotComplete.message]
+The system could not perform the operation ##oid#, user-created #login# [#uid#]
+To view the details of the operation forward to <a href="#url#?id=#oid#"> link </ a>
+
+[Support.topic]
+Support question
+// Mail, cat, topic, text
+[Support.message]
+E-mail: # mail #
+
+Category: #cat#
+Subject: #topic#
+#text#

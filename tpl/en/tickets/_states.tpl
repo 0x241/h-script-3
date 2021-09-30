@@ -1,0 +1,9 @@
+﻿{$_tstates = [
+1 => 'new',
+2 => 'Awaiting Reply',
+3 => 'In progress',
+4 => 'Processed',
+5 => 'Reply sent',
+8 => 'Detained',
+9 => 'Closed'
+] scope='global'}
