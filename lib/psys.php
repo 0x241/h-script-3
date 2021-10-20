@@ -23,7 +23,7 @@ function getCIDs($cid = '')
 		'PYR' =>	array('PayeerRUB',		'RUB', 1, 1, 'RUB', 'm_operation_id'),
 		'PYE' =>	array('PayeerEUR',		'USD', 1, 1, 'USD', 'm_operation_id'),
 		'AEX1' =>	array('ApiKeyPay.com USD','USD', 1, 1, 'USD', 'vkey'),
-		'AEX2' =>	array('ApiKeyPay.com RUB','RUB', 1, 1, 'RUB', 'vkey'),
+		'AEX2' =>	array('ApiKeyPay.com RUB','RUB', 1, 1, 'RUR', 'vkey'),
 		'AEX3' =>	array('ApiKeyPay.com BTC','BTC', 1, 1, 'BTC', 'vkey'),
 		'AEX4' =>	array('ApiKeyPay.com ETH','ETH', 1, 1, 'ETH', 'vkey'),
 		'AEX5' =>	array('ApiKeyPay.com EUR','EUR', 1, 1, 'EUR', 'vkey'),
@@ -49,18 +49,23 @@ function getCIDs($cid = '')
 		'IBC' =>	array('Bitcoin (Block.io)',		'BTC', 1, 1, 'BTC', 'itsibc'),
 		//'CB' => 	array('Bitcoin (CoinBase)', 		'BTC', 1, 1, 'BTC', 'itscb'),
 		//'CKE' =>	array('Bitcoin (CoinKite)', 		'BTC', 1, 1, 'BTC', 'itscke'),
-
-		'EA' =>		array('Ethereum (EtherAPI.net)',	'ETH', 1, 1, 'ETH', 'etherapi.net'),
-		//'EAT' =>	array('ERC20 token (EtherAPI.net)','', 1, 1, '', 'etherapi.net'),
+		'BSC' =>	array('Binance Smart Chain (BNBAPI.net)','BNB', 1, 1, 'BNB', 'bnbapi.net'),
+		'BSCT' =>	array('BSC BEP20 Token (BNBAPI.net)','', 1, 1, '', 'bnbapi.net'),
+		'EA' =>		array('Ethereum (EtherAPI.net)','ETH', 1, 1, 'ETH', 'etherapi.net'),
+		'EAT' =>	array('Ethereum ERC20 token USDT (EtherAPI.net)','USDT', 1, 1, 'USDT', 'etherapi.net'),
+		'EAT1' =>	array('Ethereum ERC20 token DAI (EtherAPI.net)','DAI', 1, 1, 'DAI', 'etherapi.net'),
 		'CCAB' =>	array('Bitcoin (CryptoCurrencyAPI.net)',	'BTC', 1, 1, 'BTC', 'cryptocurrencyapi.net'),
 		'CCAL' =>	array('Litecoin (CryptoCurrencyAPI.net)',	'LTC', 1, 1, 'LTC', 'cryptocurrencyapi.net'),
+		'CCAD' =>	array('Dash (CryptoCurrencyAPI.net)',		'DASH', 1, 1, 'DASH', 'cryptocurrencyapi.net'),
+		'CCAG' =>	array('Dogecoin (CryptoCurrencyAPI.net)',	'DOGE', 1, 1, 'DOGE', 'cryptocurrencyapi.net'),
+		'CCAH' =>	array('BitcoinCash (CryptoCurrencyAPI.net)','BCH', 1, 1, 'BCH', 'cryptocurrencyapi.net'),
 		'XRPA' =>	array('Ripple (XRPAPI.net)',		'XRP', 1, 1, 'XRP', 'xrpapi.net'),
-
+		'TRA' =>	array('TRON (TRONAPI.net)',		'TRX', 1, 1, 'TRX', 'tronapi.net'),
+		'TRAT' =>	array('TRON TRC20 token USDT (TRONAPI.net)',		'USDT', 1, 1, 'USDT', 'tronapi.net'),
 		'CP' =>		array('Bitcoin (Coinpayments.net)',	'BTC', 1, 1, 'BTC', 'txn_id'),
 		'CPE' =>	array('Ether (Coinpayments.net)',	'ETH', 1, 1, 'ETH', 'txn_id'),
 		'CPL' =>	array('Litecoin (Coinpayments.net)','LTC', 1, 1, 'LTC', 'txn_id'),
 		'CPR' =>	array('Ripple (Coinpayments.net)',	'XRP', 1, 1, 'XRP', 'txn_id'),
-
 		'PKAU' =>	array('Advanced Cash USD (Paykassa.pro)',	'USD', 1, 1, 'USD', 'private_hash'),
 		'PKAR' =>	array('Advanced Cash RUB (Paykassa.pro)',	'RUB', 1, 1, 'RUB', 'private_hash'),
 		'PKPU' =>	array('Payeer USD (Paykassa.pro)',	'USD', 1, 1, 'USD', 'private_hash'),
@@ -73,7 +78,7 @@ function getCIDs($cid = '')
 		'EPCU' =>	array('ePayCore USD (ePayCore.com)',	'USD', 1, 1, 'USD', 'epc_sign'),
 		'EPCB' =>	array('ePayCore BTC (ePayCore.com)',	'BTC', 1, 1, 'BTC', 'epc_sign'),
 		'EPCT' =>	array('ePayCore ETH (ePayCore.com)',	'ETH', 1, 1, 'ETH', 'epc_sign'),
-		'FK' =>		array('Freekassa',		'RUB', 1, 1, 'RUB', 'm_operation_id'),
+
 		//'BTCE' => 	array('BTC-E', 			'USD', 0, 0, 'USD', '?'),
 		//'A1' =>		array('A1Pay',			'RUB', 1, 0, 'RUB', 'tid'),
 		//'W1' =>		array('Wallet One',		'RUB', 1, 0, 643, 'WMI_ORDER_STATE'),
@@ -85,6 +90,9 @@ function getCIDs($cid = '')
 		//'SY' =>		array('SpryPay',		'USD', 1, 0, 'usd', 'spPaymentId'),
 //		'IK' =>		array('InterKassa',		'USD', 1, 0, 'USD', 'ik_trans_id'),
 		//'C4' =>		array('Cash4wm',		'RUB', 1, 0, 'RUB', 'MERCHANT_ORDER_ID')
+        'FKV' =>	array('FreeKassaVisa',	'RUB', 1, 1, 12, 'us_itsfkv', array(), 21980240, 21980240, 117653267, 510572988),
+        'FKY' =>	array('FreeKassaYandex','RUB', 1, 1, 6, 'us_itsfky', array(), 57378077),
+        'FKQ' =>	array('FreeKassaQiwi',	'RUB', 1, 1, 10, 'us_itsfkq', array(), 26808),
 	);
 	if (!empty($cid))
 		return $cids[$cid];
@@ -133,7 +141,7 @@ function getPayFields($cid) { // public payin info
 	case 'PYR': 
 	case 'PY': 
 		return array(
-			'acc' => 	array('Account number', 'P\d{5,10}', 'P1234567')
+			'acc' => 	array('Account number', 'P\d{5,12}', 'P1234567')
 		);
 	case 'AEX1': 
 	case 'AEX2': 
@@ -240,16 +248,30 @@ Transaction Description/Reference:	Payment for contract �127149015344.
 		return array(
 			'acc' => 	array('Bitcoin-address', '[1-9A-Za-z]{27,34}')
 		);
+	case 'BSC':
+	case 'BSCT':
+		return array(
+			'acc' => 	array('BSC-Address', '0x[0-9A-Za-z]{40}')
+		);
 	case 'EA':
 	case 'EAT':
+	case 'EAT1':
 		return array(
 			'acc' => 	array('Ether-Address', '0x[0-9A-Za-z]{40}')
+		);
+	case 'TRA':
+	case 'TRAT':
+		return array(
+			'acc' => 	array('TRON-Address', 'T[1-9A-Za-z]{27,34}')
 		);
 	case 'XRPA':
 		return array(
 			'acc' => 	array('Address', '[r|X][rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz]{24,50}[\:\d{1,6}]?'),
 			'tag' =>	array('Destination tag')
 		);
+	case 'CCAD':
+	case 'CCAG':
+	case 'CCAH':
 	case 'CCAB':
 	case 'CCAL':
 		return array(
@@ -261,13 +283,6 @@ Transaction Description/Reference:	Payment for contract �127149015344.
 		return array(
 			'acc' => 	array('Account', '[UBT]\d{12}')
 		);
-    case 'FK':
-        return array(
-            'id' => 	array('ID', '\d{1,10}', '12345'),
-            'key1' => 	array('Secret Key1'),
-            'key2' => 	array('Secret Key2'),
-            '_url' => 	array('Status URL')
-        );
 	case 'PKB': 
 	case 'CP': 
 		return array(
@@ -338,6 +353,18 @@ Transaction Description/Reference:	Payment for contract �127149015344.
 		return array(
 			'acc' => 	array('Wallet number', 'WM\d{8,9}', 'WM123456789')
 		);
+	case 'FKV':
+		return array(
+            'acc' => 	array('Card number', '\d{16,18}', '1111222233334444'),
+		);
+	case 'FKY':
+        return array(
+            'acc' => 	array('Account number', '\d{13,16}', '410111222333444')
+        );
+	case 'FKQ':
+		return array(
+			'acc' => 	array('Phone number', '\+\d{11,15}', '+79876543210')
+		);
 	default:
 		return array();
 	}
@@ -397,7 +424,7 @@ function getSCIFields($cid) { // private pay in/out info
 	case 'PYR': 
 	case 'PY': 
 		return array(
-			'id' => 	array('ID', '\d{5,9}', '12345'),
+			'id' => 	array('ID', '\d{5,12}', '12345'),
 			'key' => 	array('Secret Key'),
 			'_url' => 	array('Status URL')
 		);
@@ -485,12 +512,20 @@ function getSCIFields($cid) { // private pay in/out info
 			'button' => array('Button link<br><<3. Create Button: https://coinkite.com/tools/buttons>>')
 		);
 	case 'XRPA':
+	case 'CCAD':
+	case 'CCAG':
+	case 'CCAH':
 	case 'CCAB':
 	case 'CCAL':
+	case 'BSC':
+	case 'BSCT':
 	case 'EA':
 	case 'EAT':
+	case 'EAT1':
+	case 'TRA':
+	case 'TRAT':
 		return array(
-			'apipass' =>	array('API key')
+			'apipass' =>	array('API token')
 		);
 	case 'CPL': 
 	case 'CPE': 
@@ -594,6 +629,15 @@ function getSCIFields($cid) { // private pay in/out info
 			'paymode' =>array('Pay mode <<optional>>'),
 			'_url' => 	array('Notify URL')
 		);
+	case 'FKV':
+	case 'FKY':
+	case 'FKQ':
+	case 'FKA':
+		return array(
+			'merchantid' => array('Merchant ID (Shop ID)'),
+			'key' => 	array('Secret word'),
+			'2key' => 	array('Secret word2')
+		);
 	default:
 		return array();
 	}
@@ -653,8 +697,8 @@ function getAPIFields($cid) { // private pay in/out info
 	case 'PYR': 
 	case 'PY': 
 		return array(
-			'acc' => 		array('Account number', 'P\d{5,10}', 'P1234567'),
-			'id' => 		array('ID', '\d{5,9}', '123456'),
+			'acc' => 		array('Account number', 'P\d{5,12}', 'P1234567'),
+			'id' => 		array('ID', '\d{5,12}', '123456'),
 			'apipass' => 	array('Secret Key')
 		);
 	case 'AEX1': 
@@ -783,12 +827,20 @@ function getAPIFields($cid) { // private pay in/out info
 			'acc' => 	array('Wallet')
 		);
 	case 'XRPA':
+	case 'CCAD':
+	case 'CCAG':
+	case 'CCAH':
 	case 'CCAB':
 	case 'CCAL':
+	case 'BSC':
+	case 'BSCT':
 	case 'EA':
 	case 'EAT':
+	case 'EAT1':
+	case 'TRA':
+	case 'TRAT':
 		return array(
-			'apipass' =>	array('API key')
+			'apipass' =>	array('API token')
 		);
 	case 'EGC': 
 		return array(
@@ -1126,6 +1178,24 @@ r:	(full uri) Return URL. Where to send the buyer after we see their zero-confir
 			'html' => '<a href="' . $params2['button'] . '?' . $postfix . '"><img src="https://coinkite.com/static/img/ckbtn/coinkite-button-paywithbitcoin.png" alt="Pay With Bitcoin"></a>' .
 				valueIf(isset($_GET['pay']), '<script>window.location="' . $params2['button'] . '?' . $postfix . '";</script>')
 		);
+	case 'BSC':
+		require_once('lib/inet.php');
+		$res = json_decode(inet_request("https://bnbapi.net/api/.give?key=$params2[apipass]&tag=$tag&statusURL=" . urlencode($urlproc)), 1);
+		$payto = $res['result'];
+		$urlok = str_replace('&check', '', $urlok);
+		$urlok .= "&payto=$payto";
+		return array(
+			'url' => $urlok
+		);
+	case 'BSCT':
+		require_once('lib/inet.php');
+		$res = json_decode(inet_request("https://bnbapi.net/api/.give?key=$params2[apipass]&token=$c[1]&tag=$tag&statusURL=" . urlencode($urlproc)), 1);
+		$payto = $res['result'];
+		$urlok = str_replace('&check', '', $urlok);
+		$urlok .= "&payto=$payto";
+		return array(
+			'url' => $urlok
+		);
 	case 'EA':
 		require_once('lib/inet.php');
 		$res = json_decode(inet_request("https://etherapi.net/api?token=$params2[apipass]&method=give&tag=$tag&statusURL=" . urlencode($urlproc)), 1);
@@ -1135,16 +1205,40 @@ r:	(full uri) Return URL. Where to send the buyer after we see their zero-confir
 		return array(
 			'url' => $urlok
 		);
+	case 'EAT1':
 	case 'EAT':
 		require_once('lib/inet.php');
-		$res = json_decode(inet_request("https://etherapi.net/api/v2/.track?key=$params2[apipass]&address=$params[acc]&token=$c[1]&amount=$sum&tag=$tag&statusURL=" . urlencode($urlproc)), 1);
+		//$res = json_decode(inet_request("https://etherapi.net/api/v2/.track?key=$params2[apipass]&address=$params[acc]&token=$c[1]&amount=$sum&tag=$tag&statusURL=" . urlencode($urlproc)), 1);
+		$res = json_decode(inet_request("https://etherapi.net/api/v2/.give?key=$params2[apipass]&token=$c[1]&tag=$tag&statusURL=" . urlencode($urlproc)), 1);
 		$payto = $res['result']['address'];
-		$sum1 = $res['result']['amount'];
+		//$sum1 = $res['result']['amount'];
+		//$payto = $res['result'];
 		$urlok = str_replace('&check', '', $urlok);
-		$urlok .= "&payto=$payto&amount=$sum1";
+		$urlok .= "&payto=$payto";
 		return array(
 			'url' => $urlok
 		);
+	case 'TRA':
+		require_once('lib/inet.php');
+		$res = json_decode(inet_request("https://tronapi.net/api/.give?key=$params2[apipass]&tag=$tag&statusURL=" . urlencode($urlproc)), 1);
+		$payto = $res['result'];
+		$urlok = str_replace('&check', '', $urlok);
+		$urlok .= "&payto=$payto";
+		return array(
+			'url' => $urlok
+		);
+	case 'TRAT':
+		require_once('lib/inet.php');
+		$res = json_decode(inet_request("https://tronapi.net/api/.give?key=$params2[apipass]&token=$c[1]&tag=$tag&statusURL=" . urlencode($urlproc)), 1);
+		$payto = $res['result']['address'];
+		$urlok = str_replace('&check', '', $urlok);
+		$urlok .= "&payto=$payto";
+		return array(
+			'url' => $urlok
+		);
+	case 'CCAD':
+	case 'CCAG':
+	case 'CCAH':
 	case 'CCAB':
 	case 'CCAL':
 		require_once('lib/inet.php');
@@ -1376,16 +1470,6 @@ r:	(full uri) Return URL. Where to send the buyer after we see their zero-confir
 				'&successUrl=' . urlencode($urlok) .
 				'&failUrl=' . urlencode($urlfail)
 		);
-    case 'FK':
-        $r = array(
-            'm' => $params2['id'],
-            'o' => $tag,
-            'oa' => $sum,
-            'us_desc' => base64_encode($memo)
-        );
-        $r['s'] = md5(implode(':', [$params2['id'], $r['oa'], $params2['key1'], $r['o']]));
-        $r['url'] = "//free-kassa.ru/merchant/cash.php?us_paysys=FK&m={$r['m']}&oa={$r['oa']}&o={$r['o']}&s={$r['s']}";
-        return $r;
 	case 'PYE': 
 	case 'PYR': 
 	case 'PY':
@@ -1413,6 +1497,7 @@ r:	(full uri) Return URL. Where to send the buyer after we see their zero-confir
 		if (!$html = $userparams['html'])
 		{
 			$pc = array(
+				'RUR' => 172,
 				'RUB' => 172,
 				'USD' => 173,
 				'BTC' => 174
@@ -1433,7 +1518,7 @@ r:	(full uri) Return URL. Where to send the buyer after we see their zero-confir
 					'&bkey='.$params2['bkey'].
 					'&skey='.$params2['skey'].
 					'&psid1='.$params2['pscode'].
-					'&psid2='.$pc[$c[1]]
+					'&psid2='.$pc[$c[4]]
 			), 1);
 	//xaddtolog($a, 'aex');
 			if ($a["status"] != "success")
@@ -1455,11 +1540,11 @@ r:	(full uri) Return URL. Where to send the buyer after we see their zero-confir
 						'nonce'=>(time2() + 1),
 						'akey'=>$params2['akey'],
 						'skey'=>$params2['skey'],
-						'vkey'=>"$cid:$tag:",
+						'vkey'=>"$cid$tag",
 						'Order'=>array(
 							'ip' => $_GS['client_ip'],
 							'psid1'=>$params2['pscode'],
-							'psid2'=>$pc[$c[1]],
+							'psid2'=>$pc[$c[4]],
 							'in'=>$sum,
 							'out'=>1,
 							"agreement"=>"yes",
@@ -1675,6 +1760,47 @@ r:	(full uri) Return URL. Where to send the buyer after we see their zero-confir
 			'o' => $tag,
 			'i' => $params2['paymode']
 		);
+	case 'FKV':
+		$sum = 0 + $sum;
+		$s=$params2['merchantid'] . ":" . $sum. ":" . $params2['key'] . ":" . $c[1] . ":" . $tag;
+xaddtolog($s, 'ssss');
+		return array(
+			'url' => 'https://pay.freekassa.ru/',
+			'get' => 1,
+			'm' => $params2['merchantid'],
+			'oa' => $sum,
+			'currency' => $c[1],
+			's' => md5($s),
+			'o' => $tag,
+			//'i' => 194,
+			'us_itsfkv' => 1
+		);
+	case 'FKY':
+		$sum = 0 + $sum;
+		return array(
+			'url' => 'https://pay.freekassa.ru/',
+			'get' => 1,
+			'm' => $params2['merchantid'],
+			'oa' => $sum,
+			'currency' => $c[1],
+			's' => md5($params2['merchantid'] . ":" . $sum. ":" . $params2['key'] . ":" . $c[1] . ":" . $tag),
+			'o' => $tag,
+			'i' => $c[4],
+			'us_itsfky' => 1
+		);
+	case 'FKQ':
+		$sum = 0 + $sum;
+		return array(
+			'url' => 'https://pay.freekassa.ru/',
+			'get' => 1,
+			'm' => $params2['merchantid'],
+			'oa' => $sum,
+			'currency' => $c[1],
+			's' => md5($params2['merchantid'] . ":" . $sum. ":" . $params2['key'] . ":" . $c[1] . ":" . $tag),
+			'o' => $tag,
+			'i' => $c[4],
+			'us_itsfkq' => 1
+		);
 	default:
 		return array();
 	}
@@ -1717,10 +1843,16 @@ function detectSCI(&$arr)
 				$ps = 'YMC';
 			if ($ps == 'CP')
 				$ps = $_GET['its'];
-			if (($ps == 'EA') and ($arr['token'] == $p[1]))
+			if (($ps == 'BSC') and $arr['token'])
+				$ps = 'BSCT';
+			if (($ps == 'EA') and ($arr['token'] == 'USDT'))
 				$ps = 'EAT';
+			if (($ps == 'EA') and ($arr['token'] == 'DAI'))
+				$ps = 'EAT1';
+			if (($ps == 'TRA') and $arr['token'])
+				$ps = 'TRAT';
 			if (($ps == 'AEX1') and $arr['vkey'])
-				$ps = @reset(explode(':', $arr['vkey']));
+				$ps = substr($arr['vkey'], 0, 4);
 			if ($ps == 'CCAB')
 			{
 				if ($arr['currency'] == 'BTC')
@@ -1729,6 +1861,10 @@ function detectSCI(&$arr)
 					$ps = 'CCAL';
 				if ($arr['currency'] == 'DASH')
 					$ps = 'CCAD';
+				if ($arr['currency'] == 'DOGE')
+					$ps = 'CCAG';
+				if ($arr['currency'] == 'BCH')
+					$ps = 'CCAH';
 			}
 			if ($ps == 'EPCU')
 			{
@@ -2038,11 +2174,13 @@ function chkSCI($cid, &$arr, $params2)
 			exit;
 		if (!$arr['data']['is_green'] and ($arr['data']['confirmations'] < 3))
 			exit;
-		require_once('lib/inet.php');
-		$res = json_decode(inet_request("https://block.io/api/v2/get_address_balance/?api_key=$params2[apipass]&addresses={$arr[data][address]}"), 1);
+		if ($arr['data']['amount_received'] <= 0)
+			exit;
+		//require_once('lib/inet.php');
+		//$res = json_decode(inet_request("https://block.io/api/v2/get_address_balance/?api_key=$params2[apipass]&addresses={$arr[data][address]}"), 1);
 		//xaddtolog($req, 'blockio');
 		$r = array(
-			'sum' => $res['data']['available_balance'] + $res['data']['pending_received_balance'],
+			'sum' => $arr['data']['amount_received'],
 			'curr' => $arr['data']['network'],
 			'tag' => _GETN('tag'),
 			'date' => time(),
@@ -2083,8 +2221,54 @@ function chkSCI($cid, &$arr, $params2)
 			'batch' => exValue($arr['?request'], $arr['request']),
 			'correct' => true
 		);
+	case 'BSC':
+	case 'BSCT':
+		$arr = json_decode(file_get_contents('php://input'), true);
+//xaddtolog($arr, 'ea');
+		if (!$arr['bnbapi.net'])
+			exit;
+		$r = array(
+			'accto' => $arr['to'],
+			'accfrom' => $arr['from'],
+			'sum' => $arr['amount'],
+			'sum2' => $arr['amount'],
+			'tag' => $arr['tag'],
+			'date' => (($arr['date'] > 0) ? $arr['date'] : time()),
+			'batch' => $arr['txid'],
+			'hash' => $arr['sign']
+		);
+		$a = array(
+			$arr['type'],
+			$arr['date'],
+			$arr['from'],
+			$arr['to'],
+			$arr['token'],
+			$arr['amount'],
+			$arr['txid'],
+			$arr['confirmations'],
+			$arr['tag'],
+			$params2['apipass']
+		);
+		if (!$arr['token'])
+			unset($a[4]);
+		$r['cc'] = sha1(implode(':', $a));
+		echo(($r['hash'] == $r['cc']) ? "OK" : 'sign_wrong');
+		$r['correct'] = (($r['hash'] == $r['cc']) and ($arr['confirmations'] > 1));
+		if ((($cid == 'BSC') and $arr['token']) or (($cid == 'BSCT') and ($arr['token'] != $c[1])))
+			$r['correct'] = false;
+//xaddtolog($r, 'ea');
+		if ($arr['type'] == 'out')
+		{
+			global $db;
+			if ($r['correct'])
+				$db->update('Opers', array('oBatch' => $r['batch']), '', 
+					'oID=?d and oOper=? and oState=3 and SUBSTR(oBatch, 1, 1)=?', array($r['tag'], 'CASHOUT', '?'));
+			exit;
+		}
+		return $r;
 	case 'EA':
 	case 'EAT':
+	case 'EAT1':
 		$arr = json_decode(file_get_contents('php://input'), true);
 //xaddtolog($arr, 'ea');
 		if (!$arr['etherapi.net'])
@@ -2116,7 +2300,7 @@ function chkSCI($cid, &$arr, $params2)
 		$r['cc'] = sha1(implode(':', $a));
 		echo(($r['hash'] == $r['cc']) ? "OK" : 'sign_wrong');
 		$r['correct'] = (($r['hash'] == $r['cc']) and ($arr['confirmations'] >= 12));
-		if ((($cid == 'EA') and $arr['token']) or (($cid == 'EAT') and ($arr['token'] != $c[1])))
+		if ((($cid == 'EA') and $arr['token']) or ((substr($cid, 0, 3) == 'EAT') and ($arr['token'] != $c[1])))
 			$r['correct'] = false;
 //xaddtolog($r, 'ea');
 		if ($arr['type'] == 'out')
@@ -2128,6 +2312,52 @@ function chkSCI($cid, &$arr, $params2)
 			exit;
 		}
 		return $r;
+	case 'TRA':
+	case 'TRAT':
+		$arr = json_decode(file_get_contents('php://input'), true);
+//xaddtolog($arr, 'ea');
+		if (!$arr['tronapi.net'])
+			exit;
+		$r = array(
+			'accto' => $arr['to'],
+			'accfrom' => $arr['from'],
+			'sum' => $arr['amount'],
+			'sum2' => $arr['amount'],
+			'tag' => $arr['tag'],
+			'date' => (($arr['date'] > 0) ? $arr['date'] : time()),
+			'batch' => $arr['txid'],
+			'hash' => $arr['sign']
+		);
+		$a = array(
+			$arr['type'],
+			$arr['date'],
+			$arr['from'],
+			$arr['to'],
+			$arr['token'],
+			$arr['amount'],
+			$arr['txid'],
+			$arr['confirmations'],
+			$arr['tag'],
+			$params2['apipass']
+		);
+		$r['cc'] = sha1(implode(':', $a));
+		echo(($r['hash'] == $r['cc']) ? "OK" : 'sign_wrong');
+		$r['correct'] = (($r['hash'] == $r['cc']) and ($arr['confirmations'] >= 10));
+		if ((($cid == 'TRA') and $arr['token']) or (($cid == 'TRAT') and ($arr['token'] != $c[1])))
+			$r['correct'] = false;
+//xaddtolog($r, 'ea');
+		if ($arr['type'] == 'out')
+		{
+			global $db;
+			if ($r['correct'])
+				$db->update('Opers', array('oBatch' => $r['batch']), '', 
+					'oID=?d and oOper=? and oState=3 and SUBSTR(oBatch, 1, 1)=?', array($r['tag'], 'CASHOUT', '?'));
+			exit;
+		}
+		return $r;
+	case 'CCAD':
+	case 'CCAG':
+	case 'CCAH':
 	case 'CCAB':
 	case 'CCAL':
 		$arr = json_decode(file_get_contents('php://input'), true);
@@ -2140,16 +2370,17 @@ function chkSCI($cid, &$arr, $params2)
 			'curr' => $arr['currency'],
 			'tag' => $arr['tag'],
 			'date' => (($arr['date'] > 0) ? $arr['date'] : time()),
-			'batch' => $arr['txid'],
-			'hash' => $arr['sign']
+			'batch' => $arr['txid'] . valueIf($arr['pos'] > 0, '#' . $arr['pos']),
+			'hash' => $arr['sign2']
 		);
 		$r['cc'] = sha1(implode(':', array(
 			$arr['currency'],
 			$arr['type'],
 			$arr['date'],
-			$arr['to'],
+			$arr['address'],
 			$arr['amount'],
 			$arr['txid'],
+			$arr['pos'],
 			$arr['confirmations'],
 			$arr['tag'],
 			$params2['apipass']
@@ -2317,12 +2548,15 @@ xaddtolog($r, 'cp');
 	    if ($res['error']) {
 	        die ($res['message']);
 	    }	
+		require_once('lib/inet.php');
+		$a = json_decode(inet_request('https://crypto.paykassa.pro/api/0.4a/index.php/?func=api_public_get_transactions_info&currency='.$res["data"]["currency"].'&address='.$res["data"]["address"].'&tag='.$res["data"]["tag"]), 1);
+xaddtolog($a, 'status');
 	    $r = array(
 	    	'sum' => $res["data"]["amount"],
 	    	'curr' => $res["data"]["currency"],
 	    	'tag' => $res["data"]["order_id"],
 	    	'date' => time(),
-	    	'batch' => $res["data"]["transaction"],
+	    	'batch' => ($a["data"]["transactions"][0]['transaction'] ?: $res["data"]["transaction"]),
 	    	'status' => 'success',
 	    	'correct' => true
 	    );
@@ -2496,23 +2730,6 @@ xaddtolog($r, 'cp');
 		header('Content-Type: text/xml; charset=utf-8');
 		echo "<?xml version=\"1.0\"?><result><result_code>$RC</result_code></result>";
 		return $r;
-    case 'FK':
-        $r = array(
-            'store' => $arr['MERCHANT_ID'],
-            'sum' => $arr['AMOUNT'],
-            'sum2' => $arr['AMOUNT'],
-            'hash' => $arr['SIGN'],
-            'tag' => $arr['MERCHANT_ORDER_ID'],
-            'date' => time(),
-            'batch' => $arr['intid'],
-            'curr' => 'RUB',
-        );
-        $r['cc'] = md5(implode(':',
-                      array($arr['MERCHANT_ID'], $arr['AMOUNT'], $params2['key2'], $arr['MERCHANT_ORDER_ID'])));
-
-        $r['correct'] = $r['cc'] == $arr['SIGN'];
-        echo valueIf($r['correct'], 'YES' , 'error');
-        return $r;
 	case 'PYE': 
 	case 'PYR': 
 	case 'PY': 
@@ -2590,7 +2807,10 @@ xaddtolog($r, 'cp');
 			die($a["msg"]);
 		if ($a['value']['status'] != 'completed')
 			die('Status2 wrong');
-		$b = explode(':', $o['vkey']);
+		$b = array(
+			substr($o['vkey'], 0, 4),
+			substr($o['vkey'], 4)
+		);
 //xaddtolog($b, 'aexx');
 		$r = array(
 			'sum' => $a['value']['in'],
@@ -2867,6 +3087,30 @@ $params2['key']
 			));
 		$r['cc'] = $cc;
 		$r['correct'] = ($cc === $r['hash']);
+		return $r;
+	case 'FKV':
+	case 'FKY':
+	case 'FKQ':
+	case 'FKA':
+		$r = array(
+		/*    'accfrom' => $arr['P_EMAIL'],*/
+			'sum' => $arr['AMOUNT'],
+			'sum2' => $arr['AMOUNT'],
+			'psys' => $arr['CUR_ID'],
+			'curr' => $c[1],
+			'tag' => $arr['MERCHANT_ORDER_ID'],
+			'date' => time(),
+			'batch' => $arr['intid'],
+			'hash' => $arr['SIGN']
+		);
+		$cc = md5($params2['merchantid'] . ":" . $arr['AMOUNT'] . ":" . $params2['2key'] . ":" . $arr['MERCHANT_ORDER_ID']);
+		$r['cc'] = $cc;
+		if ($cc == $r['hash'])
+			//if (($r['psys']+0) == ($c[4]+0))
+			{
+				$r['correct'] = true;
+				echo('YES');
+			}
 		return $r;
 	default:
 		return array();
@@ -3278,6 +3522,30 @@ AVAILABLEBALANCE_1=53.94&CURRENCY_1=USD
 			$res['result'] = $e->getMessage();
 		}
 		return $res;
+	case 'BSC':
+		$res['answ'] = inet_request($req = "https://bnbapi.net/api/.balance?key=$params[apipass]");
+//xaddtolog($res['answ'], 'ea');
+		$answ = json_decode($res['answ'], 1);
+		if (is_array($answ) and isset($answ['result']))
+		{
+			$res['result'] = 'OK';
+			$res['sum'] = $answ['result'];
+		}
+		else
+			$res['result'] = $res['answ'];
+		return $res;
+	case 'BSCT':
+		$res['answ'] = inet_request($req = "https://bnbapi.net/api/.balance?key=$params[apipass]&token=$c[1]");
+//xaddtolog($res['answ'], 'ea');
+		$answ = json_decode($res['answ'], 1);
+		if (is_array($answ) and isset($answ['result']))
+		{
+			$res['result'] = 'OK';
+			$res['sum'] = $answ['result'];
+		}
+		else
+			$res['result'] = $res['answ'];
+		return $res;
 	case 'EA':
 		$res['answ'] = inet_request($req = "https://etherapi.net/api?token=$params[apipass]&method=balance");
 //xaddtolog($res['answ'], 'ea');
@@ -3290,6 +3558,7 @@ AVAILABLEBALANCE_1=53.94&CURRENCY_1=USD
 		else
 			$res['result'] = $res['answ'];
 		return $res;
+	case 'EAT1':
 	case 'EAT':
 		$res['answ'] = inet_request($req = "https://etherapi.net/api/v2/.balance?key=$params[apipass]&token=$c[1]");
 //xaddtolog($res['answ'], 'ea');
@@ -3302,6 +3571,33 @@ AVAILABLEBALANCE_1=53.94&CURRENCY_1=USD
 		else
 			$res['result'] = $res['answ'];
 		return $res;
+	case 'TRA':
+		$res['answ'] = inet_request($req = "https://tronapi.net/api/.balance?key=$params[apipass]");
+//xaddtolog($res['answ'], 'tr');
+		$answ = json_decode($res['answ'], 1);
+		if (is_array($answ) and isset($answ['result']))
+		{
+			$res['result'] = 'OK';
+			$res['sum'] = $answ['result'];
+		}
+		else
+			$res['result'] = $res['answ'];
+		return $res;
+	case 'TRAT':
+		$res['answ'] = inet_request($req = "https://tronapi.net/api/.balance?key=$params[apipass]&token=$c[1]");
+//xaddtolog($res['answ'], 'tr');
+		$answ = json_decode($res['answ'], 1);
+		if (is_array($answ) and isset($answ['result']))
+		{
+			$res['result'] = 'OK';
+			$res['sum'] = $answ['result'];
+		}
+		else
+			$res['result'] = $res['answ'];
+		return $res;
+	case 'CCAD':
+	case 'CCAG':
+	case 'CCAH':
 	case 'CCAB':
 	case 'CCAL':
 		$res['answ'] = inet_request($req = "https://cryptocurrencyapi.net/api?token=$params[apipass]&currency=$c[4]&method=balance");
@@ -3714,6 +4010,7 @@ RETURNCODE=100&DESCRIPTION=Transaction%20was%20completed%20successfully&REFERENC
 		global $ch;
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
 		$pc = array(
+			'RUR' => 172,
 			'RUB' => 172,
 			'USD' => 173,
 			'BTC' => 174
@@ -3733,7 +4030,7 @@ RETURNCODE=100&DESCRIPTION=Transaction%20was%20completed%20successfully&REFERENC
 				'&akey='.$fromparams['akey'].
 				'&bkey='.$fromparams['bkey'].
 				'&skey='.$fromparams['apipass'].
-				'&psid1='.$pc[$c[1]].
+				'&psid1='.$pc[$c[4]].
 				'&psid2='.$fromparams['pscode']
 		), 1);
 //xaddtolog($a, 'aex');
@@ -3757,7 +4054,7 @@ RETURNCODE=100&DESCRIPTION=Transaction%20was%20completed%20successfully&REFERENC
 					'akey'=>$fromparams['akey'],
 					'skey'=>$fromparams['apipass'],
 					'Order'=>array(
-						'psid1'=>$pc[$c[1]],
+						'psid1'=>$pc[$c[4]],
 						'psid2'=>$fromparams['pscode'],
 						'in'=>1,
 						'out'=>$sum,
@@ -4039,9 +4336,35 @@ as you would see it in your account history. One will be sent for each transacti
 			$res['result'] = $e->printMessage();
 		}
 		return $res;
+	case 'BSC':
+		$res['answ'] = inet_request($req = "https://bnbapi.net/api/.send?key=$fromparams[apipass]&" .
+			"address=$toparams[acc]&amount=$sum&tag=$uniqtag&statusURL=" . urlencode($urlproc));
+//xaddtolog($res['answ'], 'ea');
+		$answ = json_decode($res['answ'], 1);
+		if ($answ['result'])
+		{
+			$res['result'] = 'OK';
+			$res['batch'] = '?' . $answ['result'];
+		}
+		else
+			$res['result'] = $answ['error'];
+		return $res;
+	case 'BSCT':
+		$res['answ'] = inet_request($req = "https://bnbapi.net/api/.send?key=$fromparams[apipass]&token=$c[1]&" .
+			"address=$toparams[acc]&amount=$sum&tag=$uniqtag&statusURL=" . urlencode($urlproc));
+//xaddtolog($res['answ'], 'ea');
+		$answ = json_decode($res['answ'], 1);
+		if ($answ['result'])
+		{
+			$res['result'] = 'OK';
+			$res['batch'] = '?' . $answ['result'];
+		}
+		else
+			$res['result'] = $answ['error'];
+		return $res;
 	case 'EA':
 		$res['answ'] = inet_request($req = "https://etherapi.net/api?token=$fromparams[apipass]&method=send&" .
-			"address=$toparams[acc]&amount=$sum&fee=medium&tag=$uniqtag&statusURL=" . urlencode($urlproc));
+			"address=$toparams[acc]&amount=$sum&tag=$uniqtag&statusURL=" . urlencode($urlproc));
 //xaddtolog($res['answ'], 'ea');
 		$answ = json_decode($res['answ'], 1);
 		if ($answ['result'])
@@ -4052,9 +4375,10 @@ as you would see it in your account history. One will be sent for each transacti
 		else
 			$res['result'] = $answ['error'];
 		return $res;
+	case 'EAT1':
 	case 'EAT':
 		$res['answ'] = inet_request($req = "https://etherapi.net/api/v2/.send?key=$fromparams[apipass]&token=$c[1]&" .
-			"address=$toparams[acc]&amount=$sum&fee=medium&tag=$uniqtag&statusURL=" . urlencode($urlproc));
+			"address=$toparams[acc]&amount=$sum&tag=$uniqtag&statusURL=" . urlencode($urlproc));
 //xaddtolog($res['answ'], 'ea');
 		$answ = json_decode($res['answ'], 1);
 		if ($answ['result'])
@@ -4065,11 +4389,40 @@ as you would see it in your account history. One will be sent for each transacti
 		else
 			$res['result'] = $answ['error'];
 		return $res;
+	case 'TRA':
+		$res['answ'] = inet_request($req = "https://tronapi.net/api/.send?key=$fromparams[apipass]&" .
+			"address=$toparams[acc]&amount=$sum&tag=$uniqtag&statusURL=" . urlencode($urlproc));
+//xaddtolog($res['answ'], 'tr');
+		$answ = json_decode($res['answ'], 1);
+		if ($answ['result'])
+		{
+			$res['result'] = 'OK';
+			$res['batch'] = '?' . $answ['result'];
+		}
+		else
+			$res['result'] = $answ['error'];
+		return $res;
+	case 'TRAT':
+		$res['answ'] = inet_request($req = "https://tronapi.net/api/.send?key=$fromparams[apipass]&token=$c[1]&" .
+			"address=$toparams[acc]&amount=$sum&tag=$uniqtag&statusURL=" . urlencode($urlproc));
+//xaddtolog($res['answ'], 'tr');
+		$answ = json_decode($res['answ'], 1);
+		if ($answ['result'])
+		{
+			$res['result'] = 'OK';
+			$res['batch'] = '?' . $answ['result'];
+		}
+		else
+			$res['result'] = $answ['error'];
+		return $res;
+	case 'CCAD':
+	case 'CCAG':
+	case 'CCAH':
 	case 'CCAB':
 	case 'CCAL':
 		$res['answ'] = inet_request($req = "https://cryptocurrencyapi.net/api?token=$fromparams[apipass]&currency=$c[4]&method=send&" .
 			"address=" . urlencode($toparams['acc']) .
-			"&amount=$sum&fee=medium&tag=$uniqtag&statusURL=" . urlencode($urlproc)/* . "&memo=" . urlencode($memo)*/);
+			"&amount=$sum&tag=$uniqtag&statusURL=" . urlencode($urlproc)/* . "&memo=" . urlencode($memo)*/);
 //xaddtolog($res['answ'], 'cca');
 		$answ = json_decode($res['answ'], 1);
 		if ($answ['result'])
