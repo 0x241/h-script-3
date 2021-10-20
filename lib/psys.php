@@ -73,7 +73,7 @@ function getCIDs($cid = '')
 		'EPCU' =>	array('ePayCore USD (ePayCore.com)',	'USD', 1, 1, 'USD', 'epc_sign'),
 		'EPCB' =>	array('ePayCore BTC (ePayCore.com)',	'BTC', 1, 1, 'BTC', 'epc_sign'),
 		'EPCT' =>	array('ePayCore ETH (ePayCore.com)',	'ETH', 1, 1, 'ETH', 'epc_sign'),
-
+		'FK' =>		array('Freekassa',		'RUB', 1, 1, 'RUB', 'm_operation_id'),
 		//'BTCE' => 	array('BTC-E', 			'USD', 0, 0, 'USD', '?'),
 		//'A1' =>		array('A1Pay',			'RUB', 1, 0, 'RUB', 'tid'),
 		//'W1' =>		array('Wallet One',		'RUB', 1, 0, 643, 'WMI_ORDER_STATE'),
@@ -261,6 +261,13 @@ Transaction Description/Reference:	Payment for contract �127149015344.
 		return array(
 			'acc' => 	array('Account', '[UBT]\d{12}')
 		);
+    case 'FK':
+        return array(
+            'id' => 	array('ID', '\d{1,10}', '12345'),
+            'key1' => 	array('Secret Key1'),
+            'key2' => 	array('Secret Key2'),
+            '_url' => 	array('Status URL')
+        );
 	case 'PKB': 
 	case 'CP': 
 		return array(
@@ -1369,6 +1376,16 @@ r:	(full uri) Return URL. Where to send the buyer after we see their zero-confir
 				'&successUrl=' . urlencode($urlok) .
 				'&failUrl=' . urlencode($urlfail)
 		);
+    case 'FK':
+        $r = array(
+            'm' => $params2['id'],
+            'o' => $tag,
+            'oa' => $sum,
+            'us_desc' => base64_encode($memo)
+        );
+        $r['s'] = md5(implode(':', [$params2['id'], $r['oa'], $params2['key1'], $r['o']]));
+        $r['url'] = "//free-kassa.ru/merchant/cash.php?us_paysys=FK&m={$r['m']}&oa={$r['oa']}&o={$r['o']}&s={$r['s']}";
+        return $r;
 	case 'PYE': 
 	case 'PYR': 
 	case 'PY':
@@ -2479,6 +2496,23 @@ xaddtolog($r, 'cp');
 		header('Content-Type: text/xml; charset=utf-8');
 		echo "<?xml version=\"1.0\"?><result><result_code>$RC</result_code></result>";
 		return $r;
+    case 'FK':
+        $r = array(
+            'store' => $arr['MERCHANT_ID'],
+            'sum' => $arr['AMOUNT'],
+            'sum2' => $arr['AMOUNT'],
+            'hash' => $arr['SIGN'],
+            'tag' => $arr['MERCHANT_ORDER_ID'],
+            'date' => time(),
+            'batch' => $arr['intid'],
+            'curr' => 'RUB',
+        );
+        $r['cc'] = md5(implode(':',
+                      array($arr['MERCHANT_ID'], $arr['AMOUNT'], $params2['key2'], $arr['MERCHANT_ORDER_ID'])));
+
+        $r['correct'] = $r['cc'] == $arr['SIGN'];
+        echo valueIf($r['correct'], 'YES' , 'error');
+        return $r;
 	case 'PYE': 
 	case 'PYR': 
 	case 'PY': 
