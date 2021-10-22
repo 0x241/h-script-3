@@ -190,8 +190,9 @@ if ($_smode < 2) // user mode
 	setPage('_cfg', $_cfg);
 	setPage('root_url', $_GS['root_url']);
 	setPage('current_lang', $_GS['lang']);
-	setPage('img_path', 'images/' . $_GS['lang'] . '/');
-	setPage('css_path', 'css/' . $_GS['lang'] . '/');
+	setPage('img_path', 'static/images/');
+	setPage('css_path', 'static/css/');
+	setPage('js_path', 'static/js/');
 	
 	@include_once($_GS['module_dir'] . 'udf.php');
 	function _updateUserCounters()
