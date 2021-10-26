@@ -4,6 +4,6 @@
 {if $c == 'AA'}
 	Localhost
 {else}
-	<img src="images/flags/{$c}.png" width="15" height="10"> {$countries[$c]}
+	<img src="/static/images/flags/{$c}.png" width="15" height="10"> {$countries[$c]}
 {/if}
 {/strip}
