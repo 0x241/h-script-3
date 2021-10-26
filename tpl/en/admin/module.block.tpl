@@ -12,7 +12,7 @@
 		{/if}
 		<td width="100px" align="center">
 			<a href="{_link module=$m}">
-				<img src="images/module.png"><br>
+				<img src="/static/images/module.png"><br>
 				{$n}
 			</a>
 		</td>

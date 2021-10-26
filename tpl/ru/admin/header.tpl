@@ -6,8 +6,8 @@
 		<title>{if $title}{$title}{if $up_category} - {$up_category}{/if} | {/if}Панель управления | {$_cfg.Sys_SiteName}</title>
 		<base href="{$root_url}" />
 		<link rel="shortcut icon" href="favicon.ico">
-		<link rel="stylesheet" type="text/css" href="{$img_path}admin.css">
-		<script type="text/javascript" src="js/jquery.js"></script>
+		<link rel="stylesheet" type="text/css" href="{$css_path}admin.css">
+		<script type="text/javascript" src="{$js_path}jquery.js"></script>
 	</head>
 	<body><center>
 	{if !$short}
