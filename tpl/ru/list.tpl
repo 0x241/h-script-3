@@ -13,7 +13,7 @@
 	btns: [name => 'button caption']
 *}
 	
-<script type="text/javascript" src="js/lists.js"></script>
+<script type="text/javascript" src="static/js/lists.js"></script>
 
 {if $title}
 	<h2>{$title}</h2>

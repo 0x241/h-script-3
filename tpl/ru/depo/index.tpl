@@ -3,8 +3,8 @@
 
 <h1>Депозиты</h1>
 
-{include file='depo/depolist.js'}
-{include file='depo/timer.js'}
+{include file='static/js/depolist.js'}
+{include file='static/js/timer.js'}
 
 {include file='depo/_statuses.tpl'}
 
