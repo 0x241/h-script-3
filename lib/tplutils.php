@@ -1,6 +1,6 @@
 <?php
 
-require_once "smarty3/Smarty.class.php";
+require_once "lib/smarty/Smarty.class.php";
 global $tpl_page;
 global $tpl_errors;
 $tpl_page = new Smarty();
