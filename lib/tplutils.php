@@ -197,7 +197,7 @@ function breakIfError($form = "", $e = "Error")
 }
 function loadText($section, $file = "texts", $lang = "")
 {
-    $file = getlangdir($lang) . $file . ".lng";
+    $file = getlangdir($lang) . (string) $file . ".lng";
     if (!file_exists($file)) {
         return false;
     }
@@ -207,16 +207,18 @@ function loadText($section, $file = "texts", $lang = "")
     $h = fopen($file, "r");
     while (!feof($h)) {
         $s = trim(fgets($h, 4096));
-        if (substr($s, 0, 2) != "//") {
-            if (substr($s, 0, 1) == "[" && substr($s, -1) == "]") {
-                if (!($is && textPos(".", $celem) < 0)) {
-                    $celem = trim(substr($s, 1, -1));
-                    $is = get1ElemL($celem, ".") == $section;
-                }
-            } else {
-                if ($is) {
-                    $res[$celem] .= $s . HS2_NL;
-                }
+        if (substr($s, 0, 2) == "//") {
+            continue;
+        }
+        if (substr($s, 0, 1) == "[" && substr($s, -1) == "]") {
+            if ($is && textPos(".", $celem) < 0) {
+                break;
+            }
+            $celem = trim(substr($s, 1, -1));
+            $is = get1ElemL($celem, ".") == $section;
+        } else {
+            if ($is) {
+                $res[$celem] .= $s . HS2_NL;
             }
         }
     }
