@@ -33,18 +33,19 @@ class HS2_DB
 	{
 		try 
 		{
-			$this->link = @mysql_connect($host, $login, $pass, true);
+			$this->link = mysqli_connect($host, $login, $pass, $db);
 			$this->checkLink();
-			if (!@mysql_select_db($db, $this->link))
-				xSysError($this->lastError());
-			$this->char_set = $char_set;
-			return ($char_set ? $this->query('SET NAMES ?', $char_set) : true);
+			if (!$this->link)
+				xSysError(mysqli_connect_error());
+			if (!mysqli_set_charset($this->link, $char_set))
+				xSysError(mysqli_error($this->link));
+			return true;
 		}
 		catch (Exception $e)
 		{
 		}
 		return false;
-   	}
+	}	
 	
 	function close()
 	{
